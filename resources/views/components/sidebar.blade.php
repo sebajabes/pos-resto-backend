@@ -14,12 +14,19 @@
                     <li class='{{ Request::is('home') ? 'active' : '' }}'>
                         <a class="nav-link" href="{{ url('home') }}">Dashboard</a>
                     </li>
+                </ul>
+
+                <ul>
                     <li class=''>
                         <a class="nav-link" href="{{ route('users.index') }}">Users</a>
                     </li>
+                </ul>
+                <ul>
                     <li class=''>
                         <a class="nav-link" href="{{ route('products.index') }}">Products</a>
                     </li>
+                </ul>
+                <ul>
                     <li class=''>
                         <a class="nav-link" href="{{ route('categories.index') }}">Category</a>
                     </li>

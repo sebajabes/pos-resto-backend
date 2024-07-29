@@ -16,13 +16,13 @@ class CategoryController extends Controller
         // });
         $categories = Category::paginate(10);
 
-        return view('pages.category.index', compact('categories'));
+        return view('pages.categories.index', compact('categories'));
     }
 
     // create
     public function create()
     {
-        return view('pages.category.create');
+        return view('pages.categories.create');
     }
 
     // store
@@ -33,6 +33,7 @@ class CategoryController extends Controller
             [
                 'name' => 'required',
                 'description' => 'required',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
             ]
         );
@@ -49,21 +50,21 @@ class CategoryController extends Controller
             $category->save();
         }
 
-        return redirect()->route('pages.category.index')->with('success', 'Category created successfully');
+        return redirect()->route('categories.index')->with('success', 'Category created successfully');
     }
 
     // show
     public function show($id)
     {
         $category = Category::find($id);
-        return view('pages.category.show', compact('category'));
+        return view('pages.categories.show', compact('category'));
     }
 
     // edit
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        return view('pages.category.edit', compact('category'));
+        return view('pages.categories.edit', compact('category'));
     }
 
     // update
