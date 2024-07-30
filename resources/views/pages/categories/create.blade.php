@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Product Create')
+@section('title', 'Category Create')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Photo Product</label>
+                                <label>Photo Category</label>
                                 <div class="col-sm-9">
                                     <input type="file" class="form-control" name="image"
                                         @error('image') is-invalid @enderror>
